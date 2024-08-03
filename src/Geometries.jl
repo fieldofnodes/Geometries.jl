@@ -11,6 +11,8 @@ module Geometries
 
 using Reexport
 @reexport using Base: +
+@reexport using Base: -
+@reexport using Base: *
 
 
 
@@ -124,9 +126,7 @@ function Base.:-(p₁::PolarCoordinates,p₂::PolarCoordinates)::PolarCoordinate
     PolarCoordinates(p₁.radius,Angle(modpi(θ(p₁) - θ(p₂))))
 end
 
-function Base.:+(c₁::CartesianCoordinates,c₂::CartesianCoordinates)::CartesianCoordinates
-    CartesianCoordinates(c₁.x - c₂.x,c₁.y - c₂.y)
-end
+
 
 
 function Base.:+(a::Angle,b::Angle)::Angle
